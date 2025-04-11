@@ -217,7 +217,7 @@ def prop_yes_cor(f,x0,y0,incx,incy,X,Y):
 def consistenza_statistica(X,Y,incX,incY):
     t = np.abs(Y-X)/np.sqrt(incX**2 + incY**2)
 
-    a = 1 - norm.cdf(t) # WOW!!!
+    a = ((norm.cdf(t))*100)/68.27 # WOW!!!
     print("a: ",a)
     if(a > 0.005):
         return True,a
